@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+h1 {
+    font-size: 35px;
+}
+h3 {
+    font-size: 25px;
+}
+.container {
+    margin: 40px auto;
+    width: 90%;
+    background:linear-gradient(to top,tomato,rgb(49, 115, 181));
+    padding: 20px;
+    box-shadow: 0 0 3px 1px black;
+    border-radius: 10px;
+}
+
+
+
+/*-- input city and submit part Start --*/
+.inputCity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.inputCity input {
+    width: 100%;
+    height: 30px;
+    font-size: 18px;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+}
+.submit-btn {
+    width: 50%;
+    height: 30px;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    transition: all 0.35s linear;
+    border: 0;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background-color: white;
+    color: black;
+}
+/*-- input city and submit part End --*/
+
+
+
+/* country part  Start */
+.country {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.country img {
+    width: 100px;
+    height: 60px;
+    margin-right: 20px;
+}
+/* country part End */
+
+
+
+/* current Date part Start */
+.currentDate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+/* current Date part End */
+
+
+
+/* sunPosition part start */
+.sunPosition {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sunrise h3, .sunset h3 {
+    font-size: 20px;
+}
+.sunrise,.sunset{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.sunPosition img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid yellow;
+    margin-right: 15px;
+}
+.sunPosition p {
+    font-size: 15px;
+}
+/*sun position part end */
+
+
+
+/* today's average temperature start */
+.temperatureContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.temperatureContainer h1 {
+    font-size: 70px;
+}
+.tempImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tempImg img{
+    width: 100px;
+    height: 100px;
+    margin-top: -20px;
+}
+.tempImg h3 {
+    margin-top: -15px;
+}
+/* today's average temperature end */
+
+
+
+/* other temperature details */
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media screen and (min-width: 570px){
+    .container {
+        margin: 35px auto;
+        width: 500px;
+    }
+    .inputCity {
+        flex-direction: row;
+    }
+    .inputCity input {
+        width: 60%;
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+    .submit-btn {
+        width: 20%;
+    }
+    .country {
+        flex-direction: row;
+        text-align: left
+    }
+    .sunPosition {
+        flex-direction: row;
+    }
+    .details {
+        flex-direction: row;
+    }
+}

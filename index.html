@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>weather app</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- external css file -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+
+        <!-- input city and submit part Start -->
+        <div class="inputCity">
+            <input type="text" placeholder="City name">
+            <button class="submit-btn">Search</button>
+        </div>
+        <!-- input city and submit part End -->
+
+
+        <!-- set country and flag part Start -->
+        <div class="country">
+            <img src="" alt="flag">
+            <div class="cityDetails">
+                <h3>
+                    <span class="cityName">Dhaka</span>,
+                    <span class="countryName">Bangladesh</span>
+                </h3>
+
+                <p class="lat">Latitude :
+                     <span></span>
+                </p>
+
+                <p class="lon">Longitude : 
+                    <span></span>
+                </p>
+            </div>
+        </div>
+        <!-- set country and flag part End -->
+
+
+        <!-- current Date part Start -->
+        <div class="currentDate">
+            <h3></h3>
+            <p></p>
+        </div>
+        <!-- current Date part End -->
+
+
+        <!-- set sunrise and sunset time  Start -->
+        <div class="sunPosition">
+            <div class="sunrise">
+                <img src="./images/sunrise.jpg" alt="sunrise">
+                <div>
+                    <h3>Sunrise</h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="sunset">
+                <img src="./images/sunset.jpg" alt="sunset">
+                <div>
+                    <h3>Sunset</h3>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <!-- set sunrise and sunset time  End -->
+
+
+        <!-- set temperature Start -->
+        <div class="temperatureContainer">
+            <h1><span></span>°C</h1>
+            <div class="tempImg">
+                <img src="" alt="weather-image">
+                <h3></h3>
+            </div>
+        </div>
+        <!-- set temperature Start End -->
+
+
+        <!-- others temperature details Start -->
+        <div class="details">
+            <div class="tempDetails">
+                <p class="maxTemp">Max-temp : <span></span>°C</p>
+                <p class="minTemp">Min-temp : <span></span>°C</p>
+                <p class="feelTemp">Feels-like : <span></span>°C</p>
+            </div>
+            <div class="otherDetails">
+                <p class="humidity">Humidity : <span></span>%</p>
+                <p class="pressure">Pressure : <span></span> hPa</p>
+                <p class="wind">Wind-speed : <span></span> m/s</p>
+            </div>
+        </div>
+        <!-- others temperature details End -->
+    </div>
+    <!-- external js file -->
+    <script src="./js/weather.js"></script>
+</body>
+</html>
