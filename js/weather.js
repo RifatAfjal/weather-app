@@ -6,12 +6,6 @@ inputCity.addEventListener('click',() => {
     inputCity.value = '';
 })
 
-// By default,we get weather of the Dhaka City
-const apiLink = `https://api.openweathermap.org/data/2.5/weather?q=Dhaka&units=metric&appid=3e180048c37d3b667b4bab8de4c27e68`
-fetch(apiLink)
-    .then(response => response.json())
-    .then(json => displayData(json))
-    .catch(error => alert('Hai dude, you entered wrong city name!!Plz enter the actual name with correct spelling'))
 
 // when we input any city, after clicking we get the result
 submitBtn.addEventListener('click',() => {
@@ -23,7 +17,10 @@ submitBtn.addEventListener('click',() => {
           setName(json)
           displayData(json);
         })
-      .catch(error => alert('Hai dude, you entered wrong city name!!Plz enter the actual name with correct spelling'))
+      .catch(json => {
+          alert('Hai dude, you entered wrong city name!!Plz enter the actual name with correct spelling');
+          forCatch(json)
+        })
 })
 
 // change the city Name and Country Name
@@ -37,7 +34,7 @@ function setName(json){
 
 displayData = (data) => {
     console.log(data);
-    //set flag image src attribute dynamically
+        //set flag image src attribute dynamically
     const countryImg = document.querySelector('.country img');
     const countryName = data.sys.country.toLowerCase();
     const flagLink = `https://flagpedia.net/data/flags/h80/${countryName}.webp`;
@@ -92,6 +89,15 @@ displayData = (data) => {
     wind.innerText = data.wind.speed;
 }
 
+// create a function for setting image and description dynamically
+function elementCreate(main,review){
+    const tempImg = document.querySelector('.tempImg img');
+    tempImg.setAttribute('src',`http://openweathermap.org/img/wn/${main}.png`);
+    
+    const temp = document.querySelector('.tempImg h3');
+    temp.innerText = review;
+}
+
 // create a function for set date
 function setDate() {
     const h3 = document.querySelector('.currentDate h3');
@@ -109,14 +115,60 @@ function setDate() {
     p.innerText = fullDate;
 }
 
-setDate()
+setDate();
 
-// create a function for setting image and description dynamically
-function elementCreate(main,review){
-    const tempImg = document.querySelector('.tempImg img');
-    tempImg.setAttribute('src',`http://openweathermap.org/img/wn/${main}.png`);
+
+
+function forCatch(json){
+        const city = document.querySelector('.cityName');
+        const setCountry = document.querySelector('.countryName');
+        city.innerText = "City";
+        setCountry.innerText = "Country"
+
+        //set flag image src attribute dynamically
+        const countryImg = document.querySelector('.country img');
+        countryImg.setAttribute('src','./images/flag.jpg');
+        
+        // set lat and lon of the city
+        const lat = document.querySelector('.lat span');
+        const lon = document.querySelector('.lon span');
+        lat.innerText = "00";
+        lon.innerText = "00";
     
-    const temp = document.querySelector('.tempImg h3');
-    temp.innerText = review;
+        // set the sunrise and sunset time;
+        const sunrisePara = document.querySelector('.sunrise p');
+        const sunsetPara = document.querySelector('.sunset p');
+        sunrisePara.innerText = `Hour : Min : Sec AM`;
+        sunsetPara.innerText = `Hour : Min : Sec PM`;
+    
+    
+        // set the temperature and weather name and it's picture
+        const tempImg = document.querySelector('.tempImg img');
+        tempImg.setAttribute('src',"./images/no1.png");
+        
+        const temp = document.querySelector('.tempImg h3');
+        temp.innerText = "Weather Review";
+    
+    
+        // set temperature 
+        const temperature = document.querySelector('.temperatureContainer h1 span');
+        temperature.innerText = "00";
+    
+    
+        //set other temperature details 
+        const maxTemp = document.querySelector('.maxTemp span');
+        const minTemp = document.querySelector('.minTemp span');
+        const feelTemp = document.querySelector('.feelTemp span');
+        maxTemp.innerText = "00";
+        minTemp.innerText = "00";
+        feelTemp.innerText = "00";
+    
+    
+        //set other details;
+        const humidity = document.querySelector('.humidity span');
+        const pressure = document.querySelector('.pressure span');
+        const wind = document.querySelector('.wind span');
+        humidity.innerText = "00";
+        pressure.innerText = "00";
+        wind.innerText = "00";
 }
-
