@@ -15,7 +15,7 @@ h3 {
 .container {
     margin: 40px auto;
     width: 90%;
-    background:linear-gradient(to top,tomato,rgb(49, 115, 181));
+    background:linear-gradient(to top,tomato,gray);
     padding: 20px;
     box-shadow: 0 0 3px 1px black;
     border-radius: 10px;
@@ -66,8 +66,8 @@ h3 {
     text-align: center;
 }
 .country img {
-    width: 100px;
-    height: 60px;
+    width: 140px;
+    height: 84px;
     margin-right: 20px;
 }
 /* country part End */
